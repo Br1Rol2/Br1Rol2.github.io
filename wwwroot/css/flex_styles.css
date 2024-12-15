@@ -1,0 +1,221 @@
+﻿/* Clases flex organizadas */
+.flex{
+    display: flex;
+}
+
+.up_left {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.up_center {
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.up_right {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.center_left {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.center_center {
+    justify-content: center;
+    align-items: center;
+}
+
+.center_right {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.down_left {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.down_center {
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.down_right {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* Estilo para cajas redondeadas */
+.box_round {
+    border-radius: 10px;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.row-flex {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+.col-flex {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+  }
+
+/* content */
+.row div {
+    background-color: #EF5350;
+    padding: 3%;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: right;
+    color: white;
+    transition: background-color 1s;
+}
+
+.row div:nth-child(2n):hover {
+    background-color: #42A5F5;
+}
+
+.row div:nth-child(2n+1):hover {
+    background-color: #66BB6A;
+}
+
+/* 1/12 */
+.col-1 {
+    width: 8.33%;
+}
+
+/* 2/12 */
+.col-2 {
+    width: 16.66%;
+}
+
+/* 3/12 */
+.col-3 {
+    width: 25%;
+}
+
+/* 4/12 */
+.col-4 {
+    width: 33.33%
+}
+
+/* 5/12 */
+.col-5 {
+    width: 41.66%;
+}
+
+/* 6/12 */
+.col-6 {
+    width: 50%;
+}
+
+/* 7/12 */
+.col-7 {
+    width: 58.33%;
+}
+
+/* 8/12 */
+.col-8 {
+    width: 66.66%;
+}
+
+/* 9/12 */
+.col-9 {
+    width: 75%;
+}
+
+/* 10/12 */
+.col-10 {
+    width: 83.33%;
+}
+
+/* 11/12 */
+.col-11 {
+    width: 91.66%;
+}
+
+/* 12/12 */
+.col-12 {
+    width: 100%;
+}
+
+/* viewport <= 1000px */
+@media screen and (max-width: 1000px) {
+    * {
+        font-size: 1em;
+    }
+}
+
+/* viewport <= 630px */
+@media screen and (max-width: 630px) {
+    .row div {
+        padding: 1.5%;
+    }
+}
+
+
+
+
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left; /* Ajusta según prefieras */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #c2c2c2;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color); 
+    outline: none;
+}
+
+.submit-button {
+    background-color: #600ca5b1; 
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #6c2f9fdb; 
+}
+
+@media screen and (max-width: 500px) {
+    .contact-form {
+        width: 100%; 
+    }
+
+}
+
+p {
+    margin: 16px 0; /* Márgenes superior e inferior */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
