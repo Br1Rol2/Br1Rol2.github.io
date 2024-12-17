@@ -99,6 +99,7 @@ footer{
     box-sizing: border-box;
     background-color: #48638442;
     backdrop-filter: blur(7px);
+    align-items: center;
 }
 
 .card-content {
