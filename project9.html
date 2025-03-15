@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de FLota</title>
+    <link rel="stylesheet" href="./wwwroot/css/shared.css" />
+    <link rel="stylesheet" href="./wwwroot/css/flex_styles.css" />
+    <link rel="stylesheet" href="./wwwroot/css/gradients.css" />
+    <link rel="stylesheet" href="./wwwroot/css/carousel.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="toggleDarkLightMode" hidden checked>
+    <label for="toggleDarkLightMode" class="dark-mode-toggle" style="width: 25px; height: 25px;">
+        <svg id="sunmoon" viewBox="0 0 32 32">
+            <defs>
+                <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(40)">
+                    <stop offset="0%" stop-color="#ff003c" />
+                    <stop offset="70%" stop-color="#ff9900" />
+                </linearGradient>
+                <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(40)">
+                    <stop offset="0%" stop-color="#a4a1e8" />
+                    <stop offset="70%" stop-color="#f5db80" />
+                </linearGradient>
+                <mask id="maskc">
+                    <rect x="0" y="0" width="32" height="32" fill="white" />
+                    <circle id="mask-center" cx="40" cy="16" r="8" fill="black" />
+                </mask>
+                <mask id="maskr">
+                    <circle id="mask-rays" cx="16" cy="16" r="16" fill="white" />
+                </mask>
+            </defs>
+            <circle id="center" mask="url(#maskc)" r="8" cx="16" cy="16" />
+            <path id="rays" mask="url(#maskr)"
+                d="M6,16l-6,0 M8.929,8.929l-4.243,-4.243 M8.929,23.071l-4.243,4.243 M16,26l-0,6 M27.314,27.314l-4.243,-4.243 M32,16l-6,0 M27.314,4.686l-4.243,4.243 M16,-0l-0,6" />
+        </svg>
+    </label>
+    <input type="checkbox" id="body-checkbox" hidden>
+
+    <div class="content">
+        <div id="webpage_style">
+
+
+            <header>
+
+                <nav>
+                    <ul>
+
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/index.html#resume-about">Sobre Mí</a></li>
+                        <li><a href="/index.html#projects">Proyectos</a></li>
+                        <li><a href="#footer">Contacto</a></li>
+                        <li class="icon-button">
+
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+
+            <main>
+
+
+                <section id="projects">
+                    <h2>Modulo de Gestion de flota</h2>
+                    <div class="projects-grid ">
+
+                        <article class="card " style="height: 1260px;">
+
+                            <p class="break-word" style="max-width: 1205px; text-align: left;">
+                                El Modulo de Gestion de Flota es una solución integral para la gestión y
+                                visualización de
+                                datos clave
+                                relacionados con flotas de vehículos. Diseñado para brindar una comprensión rápida y
+                                precisa del estado de la flota y de sus conductores, el proyecto abarca las
+                                siguientes
+                                funcionalidades principales:
+                            </p>
+
+                            <div class="carousel">
+                                <input type="radio" name="carousel-radio" id="slide1" class="carousel__radio" checked>
+                                <input type="radio" name="carousel-radio" id="slide2" class="carousel__radio">
+                                <div class="carousel__slides">
+                                    <div class="carousel__slide" style="background-image: url('../../wwwroot/img/flota-1.png'); 
+                                           background-size: contain; 
+                                           background-repeat: no-repeat; 
+                                           background-position: center;
+                                           /*height: 770px;*/
+                                           ">
+
+                                    </div>
+                                    <div class="carousel__slide" style="background-image: url('../../wwwroot/img/flota-2.png'); 
+                                      background-size: contain; 
+                                      background-repeat: no-repeat; 
+                                      background-position: center;
+                                      /*height: 770px;*/
+                                      ">
+
+                                    </div>
+                                </div>
+                                <div class="carousel__controls carousel__controls--1">
+                                    <label for="slide2"
+                                        class="carousel__control carousel__control--prev">&#10094;</label>
+                                    <label for="slide2"
+                                        class="carousel__control carousel__control--next">&#10095;</label>
+                                </div>
+                                <div class="carousel__controls carousel__controls--2">
+                                    <label for="slide1"
+                                        class="carousel__control carousel__control--prev">&#10094;</label>
+                                    <label for="slide1"
+                                        class="carousel__control carousel__control--next">&#10095;</label>
+                                </div>
+                                <div class="carousel__navigation">
+                                    <label for="slide1" class="carousel__nav-button"></label>
+                                    <label for="slide2" class="carousel__nav-button"></label>
+                                </div>
+                            </div>
+
+                            <ul class="break-word" style="max-width: 1180px; text-align: left; margin: 16px;">
+                                <li>
+                                    <strong>Visualización de Indicadores y Reportes:</strong> Permite analizar datos a
+                                    través de gráficos
+                                    interactivos y reportes detallados, facilitando la toma de decisiones basada en
+                                    métricas clave.
+                                </li>
+                                <li>
+                                    <strong>Gestión de Vehículos:</strong> Centraliza toda la información relevante de
+                                    cada vehículo,
+                                    incluyendo mantenimientos, inspecciones y gastos. También permite registrar datos de
+                                    manera
+                                    eficiente.
+                                </li>
+                                <li>
+                                    <strong>Gestión de Choferes:</strong> Proporciona un espacio dedicado para la
+                                    administración de
+                                    choferes, integrando funcionalidades específicas para la organización y seguimiento
+                                    de su actividad.
+                                </li>
+                                <li>
+                                    <strong>Módulo de Mantenimiento de Flotas:</strong> Incorpora recordatorios y
+                                    notificaciones automáticas
+                                    para mantener al día tareas críticas, como inspecciones, mantenimientos y eventos
+                                    relacionados.
+                                </li>
+                            </ul>
+
+                            <h2>
+                                Tecnologias utilizadas:
+                            </h2>
+                            <div style="margin: 10px;">
+
+                                <div><span class="tech-tag">.NET</span><span class="tech-tag">REACT</span></div>
+
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer id="footer" class="flex center_center col-flex">
+                <div class="contact-form box_round col-10">
+                    <h2 class="flex center_center">Contactame</h2>
+                    <form action="https://formspree.io/f/meoqwbpz" method="POST" class="flex_center_center">
+                        <div class=" center_center col-12">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required class="col-12">
+                        </div>
+                        <div class=" center_center col-12">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="4" required class="col-12"
+                                style="resize: vertical;"></textarea>
+                        </div>
+                        <div class=" center_center col-12">
+                            <button type="submit" class="submit-button">Enviar</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="flex center_center">
+                    <p>© 2024 Bruno Roldós | Todos los derechos reservados</p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+    <label for="body-checkbox" class="body-overlay"></label>
+</body>
+
+</html>

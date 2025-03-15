@@ -1,0 +1,485 @@
+﻿/* Reset básico y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth !important;
+}
+
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#webpage_style {
+    position: relative;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.005);
+    max-width: 1390px;
+    margin: 0 auto;
+    padding: 40px 20px 0;
+    overflow: hidden;
+}
+
+/* Imagenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex: 0 0 auto;
+}
+
+/* Navegación */
+nav {
+    flex: 1;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+    position: relative;
+}
+
+nav ul li a,
+nav ul li label {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li label:hover {
+    opacity: 0.7;
+}
+
+/* Estilos para los menús desplegables */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.3);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    top: 100%;
+}
+
+.dropdown-toggle:checked+label+.dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Ocultar todas las dropdowns por defecto */
+ul .dropdown-content {
+    display: none;
+}
+
+/* Mostrar la dropdown cuando se selecciona el checkbox correspondiente */
+#toggle:checked+label+.dropdown-content,
+#login-toggle:checked+label+.dropdown-content,
+#cart-toggle:checked+label+.dropdown-content {
+    display: block;
+}
+
+/* Alternativa si se necesita ocultar todo cuando ninguno está marcado */
+#nav-toggle-none:checked~ul .dropdown-content {
+    display: none;
+}
+
+
+.dropdown-toggle:checked+label::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.dropdown-toggle:checked+label:hover::before {
+    cursor: default;
+}
+
+/* Estilos para los iconos en los menús */
+.icon-only {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
+#toggleDarkLightMode {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.dark-mode-toggle{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+}
+
+#toggleDarkLightMode {
+    position: fixed;
+    /* Cambia de absolute a fixed */
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+
+#sunmoon {
+    width: 100%;
+    height: 100%;
+}
+
+#center,
+#mask-rays,
+#mask-center {
+    transform-origin: center;
+    transition: transform 250ms ease-out, fill 250ms ease-out, stroke 250ms ease-out;
+}
+
+#center {
+    fill: url(#sunGradient);
+    transform: rotate(-35deg);
+}
+
+#rays {
+    stroke: url(#sunGradient);
+    stroke-width: 2px;
+}
+
+#toggleDarkLightMode:checked~label svg #center {
+    transform: rotate(-35deg) scale(2);
+    fill: url(#moonGradient);
+}
+
+#toggleDarkLightMode:checked~label svg #rays {
+    stroke: url(#moonGradient);
+}
+
+#toggleDarkLightMode:checked~label svg #mask-rays {
+    transform: scale(0.5);
+}
+
+#toggleDarkLightMode:checked~label svg #mask-center {
+    transform: translateX(-18px);
+}
+
+
+
+
+#toggleDarkLightMode:checked~.content {
+    background-color: #232222;
+    color: #EEE;
+}
+
+#toggleDarkLightMode:checked~.content a,
+#toggleDarkLightMode:checked~.content label {
+    color: #d4d4d4;
+}
+
+#toggleDarkLightMode:checked~.content a:hover,
+#toggleDarkLightMode:checked~.content label:hover {
+    color: white;
+}
+
+#toggleDarkLightMode:checked~.card {
+    background-color: #333;
+    border-color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#toggleDarkLightMode:checked~.card:hover {
+    background-color: #444;
+    border-color: #555;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los iconos en los menús */
+.icon-button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    stroke: currentColor;
+    transition: fill 0.3s ease, stroke 0.3s ease, opacity 0.3s ease;
+}
+
+.icon-button:hover .icon,
+.icon-only:hover .icon {
+    opacity: 0.8;
+}
+
+/* Modo oscuro - Cambia el color del icono a blanco */
+#toggleDarkLightMode:checked~.content .icon {
+    fill: #fff;
+    stroke: #fff;
+}
+
+/* Productos destacados */
+.featured-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    border: 1px solid rgba(51, 51, 51, 0.21);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    border-radius: 8px;
+    width: 240px;
+    height: 170px;
+    background: url('http://fakeimg.pl/350x250/333/fff') no-repeat center;
+    background-size: cover;
+}
+
+/* Hero section */
+.hero {
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1e0c29;
+    text-align: start;
+    padding-bottom: 0px;
+    margin-top: 20px;
+}
+
+footer ul {
+    padding-left: 1.75rem;
+    margin-top: .5rem;
+}
+
+footer ul li {
+    cursor: pointer;
+    color: #d4d4d4;
+    width: fit-content;
+}
+
+footer ul li:hover {
+    color: white;
+}
+
+footer .help-sec {
+    grid-column-start: 2;
+}
+
+/* Formulario de contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    background-color: #2c2c2c;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    nav ul li {
+        margin: 0.5rem 1rem 0.5rem 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        display: none;
+    }
+
+    .dropdown-toggle:checked+label+.dropdown-content {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+.hero1 {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    text-align: left;
+}
+
+.hero1 h1 {
+    font-size: 2.5rem;
+}
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.viewport-section {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Technology tag styling */
+.tech-tag {
+    display: inline-block;
+    background-color: rgb(22, 25, 26);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    margin: 0.2rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff !important;
+}
+
+.break-word {
+    hyphens: auto; 
+    word-break: break-word;
+    overflow-wrap: break-word; 
+}
+
+.enlace-custom {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(173, 216, 230) !important;
+}
+
+.enlace-custom:hover {
+    color: rgb(62, 101, 255) !important;
+}
